@@ -44,12 +44,16 @@ export default function Chatbot() {
     <div className="flex flex-col h-screen max-w-xl mx-auto p-4">
       <div className="flex-1 overflow-y-auto space-y-2">
         {messages.map((msg, idx) => (
-          <div
-            key={idx}
-            className={\`max-w-[70%] p-3 rounded-2xl text-sm shadow-md whitespace-pre-wrap \${msg.type === 'bot' ? 'bg-gray-100 text-gray-800 self-start' : 'bg-blue-500 text-white self-end'}\`}
-          >
-            {msg.text}
-          </div>
+          <div key={idx}
+  className={
+    `max-w-[70%] p-3 rounded-2xl text-sm shadow-md whitespace-pre-wrap ` +
+    (msg.type === 'bot'
+      ? 'bg-gray-100 text-gray-800 self-start'
+      : 'bg-blue-500 text-white self-end')
+  }
+>
+  {msg.text}
+</div>
         ))}
       </div>
       <div className="mt-4 flex gap-2">
