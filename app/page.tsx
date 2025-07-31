@@ -33,7 +33,7 @@ export default function Chatbot() {
 
     setTimeout(() => {
       const answer = findAnswer(input);
-      const botResponse = { type: "bot", text: answer } as Message;
+      const botResponse: Message = { type: 'bot', text: answer };
       setMessages((prev) => [...prev, botResponse]);
     }, 500);
 
