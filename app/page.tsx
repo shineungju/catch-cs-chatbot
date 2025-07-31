@@ -28,8 +28,8 @@ export default function Chatbot() {
   const handleSend = () => {
     if (!input.trim()) return;
 
-    const userMessage = { type: 'user', text: input };
-    setMessages((prev) => [...prev, userMessage]);
+    const userMessage: Message = { type: 'user', text: input };
+    setMessages((prev: Message[]) => [...prev, userMessage]);
 
     setTimeout(() => {
       const answer = findAnswer(input);
